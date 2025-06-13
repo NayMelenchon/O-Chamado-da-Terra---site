@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Desenvolvedores - O Chamado da Terra</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #5f8a52 0%, #5f8a52 100%);
+            color: #cc1414;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: #000000dd;
+            backdrop-filter: saturate(180%) blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 50px;
+            z-index: 1000;
+            border-bottom: 1px solid #505050;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            color: #e0e0e0;
+            font-weight: 800;
+            font-size: 1.9rem;
+            letter-spacing: 6px;
+            user-select: none;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 2px #000000c7;
+        }
+
+        nav ul {
+              list-style: none;
+      display: flex;
+      gap: 40px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 8px;
+      margin-right: 100px;
+        }
+
+        nav ul li a {
+            position: relative;
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+            color: #cfcfcf;
+        }
+
+        nav ul li a:hover,
+        nav ul li a:focus {
+            border-color: #bbbbbb;
+            outline: none;
+            color: #ffffff;
+        }
+
+        main {
+            margin-top: 80px;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 40px 30px;
+        }
+
+        h2.section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.75rem;
+            color: #e6e6e6;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-align: center;
+            margin-bottom: 48px;
+            user-select: none;
+            text-shadow: 1px 1px 2px #111111aa;
+        }
+
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto;
+            gap: 40px 40px;
+            max-width: 950px;
+            margin: 0 auto;
+            justify-items: center;
+            width: 100%;
+        }
+
+        /* Position the two cards in the second row aligned with the first two cards on the top row but shifted right */
+        .member-card:nth-child(4) {
+            grid-column: 2 / 3;
+            justify-self: start;
+            margin-left: -145px;
+            height: 330px; /* shift right */
+        }
+        .member-card:nth-child(5) {
+            grid-column: 3 / 4;
+            justify-self: start;
+            margin-left: -140px; 
+            height: 330px;/* shift right */
+        }
+
+        .member-card {
+            background: rgba(22, 49, 22, 0.8);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            color: #fafafa;
+            box-shadow: 0 0 16px #999999bb;
+            width: 340px;
+            height: 330px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .member-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 24px #cfcfcfbb;
+        }
+
+        .member-photo {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #e0e0e0;
+            margin-bottom: 15px;
+            flex-shrink: 0;
+        }
+
+        .member-name {
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: #e0e0e0;
+            margin-bottom: 5px;
+        }
+
+        .member-role {
+            font-weight: 400;
+            font-size: 1rem;
+            color: #ddd;
+        }
+
+        footer {
+   background-color: #333; /* Cor do fundo do rodapé */
+   color: white;
+   text-align: center;
+   padding: 2px;
+   position: fixed;
+   width: 100%;
+   left: 0;
+   bottom: 0;
+    }
+
+        @media (max-width: 980px) {
+            .team-container {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto auto auto;
+                gap: 30px;
+            }
+            .member-card:nth-child(4),
+            .member-card:nth-child(5) {
+                grid-column: auto;
+                justify-self: center;
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .team-container {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+       <a href="index.html" class="logo">
+      <img src="tentativa-logo2.png"
+        alt="Fitness app logo with modern typography on dark background" />
+        <nav role="navigation" aria-label="Menu principal">
+            <ul>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="universo.html">Universo</a></li>
+                <li><a href="gameplay.html">Gameplay</a></li>
+                
+                <li><a href="equipe.html">Desenvolvedores</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                
+       <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image"></div>
+       <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image2"></div>
+       <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image3"></div>
+       <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image4"></div>
+      <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image5"></div>
+       <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image6"></div>
+       <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image7"></div>
+      <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image8"></div>
+       <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image9"></div>
+       <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image10"></div>
+      <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image11"></div>
+       <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image12"></div>
+       <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image13"></div>
+      <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image14"></div>
+       <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image15"></div>
+       <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image16"></div>
+       <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image17"></div>
+      <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image18"></div>
+      <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image19"></div> 
+          <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image20"></div>
+       <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image21"></div>
+       <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image22"></div>
+      <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image23"></div>
+      <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image24"></div> 
+       <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image25"></div> 
+          <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image26"></div>
+       <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image27"></div>
+       <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image28"></div>
+      <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image29"></div>
+      <div class="header-image-container"><img src="planta-so-planta-site.png" alt="Imagem de folhas" class="header-image30"></div> 
+          </ul>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 class="section-title" id="desenvolvedores-title">Desenvolvedores</h2>
+        <div class="team-container">
+            <div class="member-card">
+                <img src="bruna.jpg" alt="Bruna" class="member-photo" />
+                <div class="member-name">Bruna Nakamura</div>
+                <div class="member-role">Designer</div>
+            </div>
+            <div class="member-card">
+                <img src="nay.jpg" alt="Nayara" class="member-photo" />
+                <div class="member-name">Nayara Melenchon</div>
+                <div class="member-role">Autora e programadora</div>
+            </div>
+            <div class="member-card">
+                <img src="vini.jpg" alt="Vinicius" class="member-photo" />
+                <div class="member-name">Vinícius de Arimateia</div>
+                <div class="member-role">Programador</div>
+            </div>
+            <div class="member-card">
+                <img src="ricardo.jpg" alt="Ricardo" class="member-photo" />
+                <div class="member-name">Ricardo Giantomaso</div>
+                <div class="member-role">Orientador</div>
+            </div>
+            <div class="member-card">
+                <img src="luan.jpg" alt="Luan" class="member-photo" />
+                <div class="member-name">Luan Martins</div>
+                <div class="member-role">Coorientador</div>
+            </div>
+        </div>
+        <BR></BR>
+        <BR></BR>
+        <BR></BR>
+       
+    </main>
+    <footer>
+        &copy; 2025 O Chamado da Terra. Todos os direitos reservados.
+    </footer>
+</body>
+</html>
+
